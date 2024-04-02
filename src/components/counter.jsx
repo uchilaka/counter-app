@@ -4,7 +4,7 @@ class Counter extends Component {
   render() {
     return (
       <div>
-        <div className="row">
+        <div role="row" className="row">
           <div className="">
             <span style={{ fontSize: 24 }} className={this.getBadgeClasses()}>
               {this.formatCount()}
@@ -12,20 +12,20 @@ class Counter extends Component {
           </div>
           <div className="">
             <button
-              className="btn btn-secondary"
+              className="btn btn-secondary increment-btn"
               onClick={() => this.props.onIncrement(this.props.counter)}
             >
               <i className="fa fa-plus-circle" aria-hidden="true" />
             </button>
             <button
-              className="btn btn-info m-2"
+              className="btn btn-info decrement-btn m-2"
               onClick={() => this.props.onDecrement(this.props.counter)}
               disabled={this.props.counter.value === 0 ? "disabled" : ""}
             >
               <i className="fa fa-minus-circle" aria-hidden="true" />
             </button>
             <button
-              className="btn btn-danger"
+              className="btn btn-danger clear-btn"
               onClick={() => this.props.onDelete(this.props.counter.id)}
             >
               <i className="fa fa-trash-o" aria-hidden="true" />
